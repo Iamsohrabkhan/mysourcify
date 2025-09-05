@@ -1,0 +1,124 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* navbar */
+.nav-items li {
+  position: relative;
+}
+
+.nav-item-chilld {
+  overflow: clip;
+  line-height: 1;
+  color: var(--nav-link-color) !important;
+  text-shadow: 0px 1em 0px var(--nav-link-color);
+  /* mix-blend-mode: difference; */
+  /* color: white; */
+}
+
+.nav-items a {
+  overflow: clip;
+}
+
+.nav-items li::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  height: 2px;
+  pointer-events: none;
+  background-color: black;
+  width: 100%;
+  transform: scaleX(0);
+  transition: transform 0.4s ease-out;
+  transform-origin: right;
+}
+
+.nav-items li.scale-1::after {
+  transform: scaleX(1);
+  transform-origin: left;
+}
+
+strong {
+  color: green;
+}
+
+/* button */
+
+button {
+  background-color: transparent;
+}
+
+.primary-button {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1.2rem;
+
+  * {
+    transition: all 0.3s ease-out;
+  }
+
+  .primary-btn-overlay-1 {
+    background: #ffafbd !important;
+    background: -webkit-linear-gradient(to left, #ffc3a0, #ffafbd) !important;
+    background: linear-gradient(to left, #ffc3a0, #ffafbd) !important;
+  }
+
+  .primary-btn-overlay-2 {
+    background: black;
+    transform: translateY(100%);
+  }
+
+  .primary-btn-text-wrapper {
+    overflow: clip;
+  }
+
+  .primary-btn-text {
+    text-shadow: 0px 1em 0px white;
+    line-height: 1;
+  }
+
+  &:hover {
+    .primary-btn-overlay-2 {
+      transform: translateY(0%);
+    }
+
+    .primary-btn-text {
+      transform: translateY(-100%);
+    }
+
+    .primary-btn-helper {
+      transform: rotate(90deg);
+    }
+  }
+}
+
+
+/* Page transition animations */
+@keyframes swup-old-up {
+  0% { transform: translateY(0); opacity: 1; }
+  100% { transform: translateY(-30px); opacity: 0; }
+}
+@keyframes swup-new-down {
+  0% { transform: translateY(30px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
+
+/* wrappers used during animation */
+.swup-anim-old {
+  animation: swup-old-up 360ms cubic-bezier(.22,.9,.3,1) forwards;
+  will-change: transform, opacity;
+}
+.swup-anim-new {
+  animation: swup-new-down 360ms cubic-bezier(.22,.9,.3,1) forwards;
+  will-change: transform, opacity;
+}
+
+/* optional: avoid FOUC on initial load */
+.swup-hidden-before-init {
+  opacity: 1;
+  transform: none;
+}

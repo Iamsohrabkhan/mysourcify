@@ -1,0 +1,28 @@
+{
+  // ✅ Formatting
+  "editor.formatOnSave": true,
+  "editor.defaultFormatter": "esbenp.prettier-vscode", // use Prettier
+
+  // ✅ ESLint Auto Fix
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+
+  // ✅ Suggestions / IntelliSense
+  "editor.quickSuggestions": {
+    "other": true,
+    "comments": false,
+    "strings": true
+  },
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  "editor.suggest.showWords": true,
+  "editor.suggest.showSnippets": true,
+  "editor.parameterHints.enabled": true,
+  "editor.inlineSuggest.enabled": true,
+
+  // ✅ JavaScript/TypeScript specific
+  "javascript.suggest.enabled": true,
+  "typescript.suggest.enabled": true,
+  "javascript.updateImportsOnFileMove.enabled": "always",
+  "typescript.updateImportsOnFileMove.enabled": "always"
+}
