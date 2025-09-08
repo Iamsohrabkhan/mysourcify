@@ -8,6 +8,7 @@ import { initSmoothScroll } from './initLenis.js';
 import { scrollTrack200 } from './scrollTrack.js';
 import { wordsAnimation } from './wordsAnimations.js';
 import { slideIn } from './slideIn.js';
+import { linesAnimation } from './linesAnimation.js';
 
 
 
@@ -16,7 +17,8 @@ document.addEventListener('DOMContentLoaded', () => {
   navAnimation();
   scrollTrack200(lenis);
   wordsAnimation();
-  slideIn()
+  slideIn();
+  linesAnimation()
 });
 
 

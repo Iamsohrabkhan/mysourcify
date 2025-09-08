@@ -96,6 +96,17 @@ button {
   }
 }
 
+/* .hero-heading{
+  .word{
+    opacity: 0;
+  }
+}
+.hero-paragraph{
+  .word{
+    opacity: 0;
+  }
+} */
+
 
 /* Page transition animations */
 @keyframes swup-old-up {

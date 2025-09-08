@@ -1,24 +1,22 @@
 import gsap, { ScrollTrigger, SplitText } from 'gsap/all';
 
-export const wordsAnimation = () => {
+export const linesAnimation = () => {
   gsap.registerPlugin(ScrollTrigger, SplitText);
 
-  document.querySelectorAll('.words-animation').forEach((el) => {
+  document.querySelectorAll('.lines-animation').forEach((el) => {
     const text = SplitText.create(el, {
-      type: 'words, lines',
-      mask: 'lines',
-      wordsClass: 'word++',
+      type: 'lines',
       linesClass: 'lines',
       autoSplit: true,
       onSplit: (self) => {
         if (self) {
-          gsap.set(self.words, { yPercent: 10,opacity:0 });
+          gsap.set(self.lines, { yPercent: 10, opacity: 0 });
 
-          gsap.to(self.words, {
+          gsap.to(self.lines, {
             yPercent: 0,
-            opacity:1,
+            opacity: 1,
             stagger: {
-              amount: 0.3,
+              amount: 0.6,
             },
             ease: 'power4.out',
             // duration: 0.5,
